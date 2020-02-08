@@ -16,7 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', function () {
-    return view('hello');
+
+    $fruits = ['banana', 'orange', 'peach', 'strawberry'];
+    
+    return view('hello', [
+        'fruits' => $fruits
+    ]);
 });
 
 Route::get('/contact', function () {
