@@ -22,6 +22,10 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
+        request()->validate([
+            'title' => 'required',
+            'body' => 'required'
+        ]);
         Task::create([
             'title' => $request->input('title'),
             'body' => $request->input('body')
